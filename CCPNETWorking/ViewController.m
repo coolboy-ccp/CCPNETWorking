@@ -30,6 +30,13 @@
         NSLog(@"error--%@",[error localizedDescription]);
     };
     [manager startTask];
+    //or
+    /*
+    [manager startTask:^(id rsp) {
+        rq_log(@"%@",rsp);
+    } failed:^(NSError *error) {
+        rq_log(@"%@",error);
+    }];*/
 }
 
 

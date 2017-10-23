@@ -25,6 +25,7 @@
 
 - (instancetype)initRqWith:(NSString *)url pragma:(NSDictionary *)dic style:(NSString *)style {
     if (self = [super init]) {
+        _manager = [AFHTTPSessionManager manager];
         self.rq_url = url;
         self.rq_dic = dic;
         self.rq_style = style?:@"get";
@@ -32,7 +33,6 @@
         self.accTypes = @[@"text/plain"];
         self.requestIsJson = YES;
         self.responseIsJson = YES;
-        _manager = [AFHTTPSessionManager manager];
     }
     return self;
 }
